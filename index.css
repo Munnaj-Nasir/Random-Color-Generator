@@ -1,0 +1,258 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+/* body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+} */
+/* ... existing global and main-body rules ... */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-color: #F8F9FB;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1;
+}
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: #5A67D8;
+  padding-top: 40px;
+}
+.header h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #ffffff, #EAF0F9);
+  z-index: 0;
+  transition: transform 0.4s ease;
+}
+
+.main-body {
+  background-color: #151515;
+  width: 390px;
+  height: 737px;
+  /* Corrected syntax for border-radius */
+  border-radius: 40px 40px 0 0; 
+}
+
+.Color-container {
+  width: 500px;
+  height: 500px;
+  border: #151515 1px solid;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  display: flex;
+  
+  /* FIX: Use flex properties on the container to center its items */
+  justify-content: center; /* Centers items horizontally */
+  /* If you want items centered vertically too, uncomment the next line */
+   align-items: center;
+}
+
+h1 {
+  /* FIX: text-align is what centers the text INSIDE the h1 */
+  text-align: center; 
+  color: aliceblue;
+  /* Removed justify-content as it does nothing on h1 */
+}
+
+/* .color-generator {
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+    padding: auto;
+    background-color: white;
+    border-radius: 1px solid black;
+}
+.color-generator:hover {
+    background-color: black;
+    color: white;
+    transition-duration: 1000ms ease-in;
+} */
+.color-generator {
+  /* Basic styling */
+  background-color: #f5f5f5;
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+  color: black;
+  font-family: 'roboto', sans-serif;
+  /* Added fallback */
+  font-size: 14px;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  height: 40px;
+  width: 150px;
+  /* Performance and transition */
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+  margin-bottom: 50px;
+}
+
+/* Pseudo-element for the animated background effect */
+.color-generator::after {
+  background-color: black;
+  border-radius: 3rem;
+  content: '';
+  display: block;
+  height: 40px;
+  width: 150px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* Start position (off-screen to the left, rotated) */
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+
+  /* Performance and transition */
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+/* Hover state for the pseudo-element: slides the background in */
+.color-generator:hover::after {
+  transform: translate(0, 0);
+  /* Moves background into view */
+}
+
+/* Hover state for the main element: changes border, color, and scales up */
+.color-generator:hover {
+  border: 2px solid transparent;
+  /* Makes border invisible */
+  color: white;
+  /* Changes text color */
+  transform: scale(1.05);
+  /* Slightly enlarges the element */
+  will-change: transform;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+
+.svg-inline--fa {
+  vertical-align: -0.200em;
+}
+
+.rounded-social-buttons {
+  text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-tiktok, .fa-youtube, .fa-instagram {
+  font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.twitter {
+  background: #55acee;
+}
+
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+  color: #55acee;
+  background: #fefefe;
+  border-color: #55acee;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.tiktok {
+  background: #000000;
+}
+
+.rounded-social-buttons .social-button.tiktok:hover, .rounded-social-buttons .social-button.tiktok:focus {
+  color: #000000;
+  background: #fefefe;
+  border-color: #000000;
+}
+
+.rounded-social-buttons .social-button.youtube {
+  background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
+}
+.header1 {
+  width: 100%;
+  height: 100px;
+  background-color: #5A67D8;
+  padding-top: 40px;
+
+}
